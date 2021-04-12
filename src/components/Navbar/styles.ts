@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import Avatar from '../Avatar';
+import Button from '../Button';
+
 
 export const Container = styled.header`
   width: 100vw;
@@ -38,9 +41,27 @@ export const Nav = styled.nav`
     justify-content: space-between;
 
     color: #333;
-
-    img {
-      transform: scale(0.4);
-    }
   }
+`;
+
+export const AvatarStyled = styled(Avatar)`
+  width: 5rem;
+  height: 2rem;
+  width: 50px;
+  height: 50px;
+  /* border-radius: 25%; */
+  border: 1px solid #333;
+`;
+
+export const ButtonStyled = styled(Button)`
+  width: 5rem;
+  height: 2.5rem;
+  color: #fefefe !important;
+  background: ${props => props.theme.colors.primary};
+  border-radius: 5px;
+  margin-right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

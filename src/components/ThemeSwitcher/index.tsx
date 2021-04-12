@@ -15,10 +15,9 @@ const ThemeSwitcher: React.FC = () => {
 
   return (
     <Container title="Deslize para o modo dark ou light">
-      <Bulb size={25} className={`icon ${theme.title === 'light' ? 'active' : ''}`}/>
       <Switch
         onChange={handleSwitched}
-        checked={theme.title === 'dark' ? true : false}
+        checked={theme.title === 'light'}
         checkedIcon={false}
         uncheckedIcon={false}
         height={15}
@@ -28,6 +27,7 @@ const ThemeSwitcher: React.FC = () => {
         onColor={theme.colors.active}
 
       />
+      <Bulb size={25} className={`icon ${theme.title === 'light' ? 'active' : ''}`}/>
     </Container>
   )
 }

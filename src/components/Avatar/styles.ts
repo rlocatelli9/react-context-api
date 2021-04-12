@@ -1,20 +1,13 @@
 import styled from 'styled-components';
+import {ImgHTMLAttributes} from 'react';
 
-export const Container = styled.div`
-  padding: 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
+type ImgProps = ImgHTMLAttributes<HTMLImageElement>;
 
-  width: 100px;
-  height: 100px;
+interface ImageProps extends ImgProps {
+  radius: number;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
+export const Img = styled.img<ImageProps>`
+  background: none;
+  border-radius: ${props => props.radius}%;
 `;
