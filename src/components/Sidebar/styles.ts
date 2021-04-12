@@ -11,14 +11,16 @@ const animationArrow = keyframes`
 
 export const Container = styled.aside`
   grid-area: sidebar;
-  background: #fafbfc;
+  background: ${props => props.theme.colors.background};
   padding: 1.875rem;
   max-height: minmax(80px 25vh);
-  color: #b07dfb;
+  color: ${props => props.theme.colors.text};
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
+  border: 1px solid ${props => props.theme.colors.secundary};
 
   li a {
     display: block;
@@ -32,7 +34,7 @@ export const Container = styled.aside`
     transition: 0.1 ease-out;
   }
   li a:hover {
-    background: #b07dfb;
+    background: ${props => props.theme.colors.background};
   }
   @media (max-width: 760px) {
     overflow-x: auto;

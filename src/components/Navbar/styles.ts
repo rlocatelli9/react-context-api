@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   width: 100vw;
   height: 60px;
-  background: ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.background};
   position: fixed;
   grid-area: header;
 

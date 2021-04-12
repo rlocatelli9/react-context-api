@@ -4,24 +4,36 @@ import { Container, Content } from './styles';
 
 import Sidebar from '../Sidebar';
 
+import DashboardIconDark from '../../assets/ilustration_Dashboard.svg';
+import DashboardIconLight from '../../assets/ilustration_Dashboard_light.svg';
+import useTheme from '../../hooks/useTheme';
+
 const Main: React.FC = () => {
+
+  const {theme} = useTheme();
+
   return (
     <Container>
         <Sidebar />
         <Content>
           <h1>Content</h1>
+
+          <div className="col-wide">
+            <img src={(theme.title === 'dark' ? DashboardIconDark: DashboardIconLight)} alt="dashboard"/>
+          </div>
+
           <p className="col-wide">
             É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior,
             cerca de 300 mil anos atrás.[2] O sequenciamento de DNA e estudos genéticos
             reafirmam que o lobo cinzento é ancestral do cão doméstico
           </p>
 
-          <img src="https://i.pinimg.com/originals/01/3d/67/013d67a83447c3f750f61018ebbc30cf.jpg" alt="Wolf 1" className="image1" />
-
           <p className="featured">
             É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior,
             cerca de 300 mil anos atrás.[2] O sequenciamento de DNA e estudos.
           </p>
+
+          <img src="https://i.pinimg.com/originals/01/3d/67/013d67a83447c3f750f61018ebbc30cf.jpg" alt="Wolf 1" className="image1" />
 
           <img src="https://i.pinimg.com/originals/01/3d/67/013d67a83447c3f750f61018ebbc30cf.jpg" alt="Wolf 2" className="image2" />
 

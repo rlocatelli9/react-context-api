@@ -21,6 +21,9 @@ export default createGlobalStyle`
     font-weight: 500;
     color: ${props => props.theme.colors.text};
   }
+  p {
+    color: ${props => props.theme.colors.text};
+  }
   button {
     cursor: pointer;
   }

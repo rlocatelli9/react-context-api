@@ -9,6 +9,7 @@ export const Container = styled.div`
     "sidebar content"
   ;
   grid-gap: 10px;
+  color: ${props => props.theme.colors.text};
 
   @media (max-width: 1200px){
     grid-template-areas:
@@ -31,14 +32,18 @@ export const Content = styled.main`
   max-width: 100%;
   /* margin: 10px 0; */
   padding: 30px;
-  background: white;
+  background: ${props => props.theme.colors.background};
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+
+  border-radius: 5px;
+  border: 1px solid ${props => props.theme.colors.secundary};
+
   .featured {
     font-size: 0.875em;
     color: #b07dfb;
-    max-width: 16em;
+    /* max-width: 16em; */
   }
   @media (max-width: 600px) {
     grid-template-columns: auto;
@@ -71,7 +76,7 @@ export const Content = styled.main`
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
-    color: white;
+    /* color: ${props => props.theme.colors.text}; */
   }
   .attributes li {
     color: white;
@@ -86,13 +91,15 @@ export const Content = styled.main`
     font-size: 1.2rem;
     line-height: 1.6rem;
     letter-spacing: -0.005em;
-    color: rgba(0, 0, 0.7);
+    /* color: ${props => props.theme.colors.text}; */
   }
 `;
 
 export const Aside = styled.aside`
   grid-area: announcement;
-  background: #fafbfc;
+  background: ${props => props.theme.colors.background};
+  border-radius: 5px;
+  border: 1px solid ${props => props.theme.colors.secundary};
   display: grid;
   align-content: start;
   padding: 30px;
