@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ThemeCustomContextProvider } from './context/themeContext';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeCustomContextProvider>
+      <App />
+    </ThemeCustomContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

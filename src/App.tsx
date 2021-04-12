@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './styles/global';
+import useTheme from './hooks/useTheme';
 
-function App() {
+import Navbar from './components/Navbar';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
+
+
+const App: React.FC = () => {
+
+  const {theme} = useTheme();
+
+  const user = {
+    avatar: 'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    name: "João da Silva",
+    age: 28,
+    followers: 3000
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <div className="structure">
+        <GlobalStyles />
+        <Navbar />
+        <Main />
+        <Footer />
+      </div>
+    </ThemeProvider>
+  )
 }
 
 export default App;
